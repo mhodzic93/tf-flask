@@ -1,5 +1,5 @@
 provider "aws" {
   region      = "${var.region}"
-  version     = "${var.aws_provider_version}"
-  max_retries = "${var.max_retries}"
+  version     = "2.24.0"
+  max_retries = "50"
 }

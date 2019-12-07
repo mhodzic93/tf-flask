@@ -1,15 +1,91 @@
-# Global Variables
+# General Variables
+variable "environment_type" {
+  description = "Sets the environment being deployed"
+}
+
+variable "key_name" {
+  description = "Sets the ec2 key pair name used on the ecs host instances"
+}
+
 variable "region" {
   description = "Sets the aws region where the infrastructure is deployed"
 }
 
-# Provider Variables
-variable "aws_provider_version" {
-  description = "Sets the aws provider version for Terraform"
-  default     = "2.24.0"
+variable "stack_name" {
+  description = "Sets the name of the stack"
 }
 
-variable "max_retries" {
-  description = "Sets the maximum number of times an AWS api request can be made"
-  default     = "50"
+variable "vpc_id" {
+  description = "Sets the vpc id that the resources are using"
+}
+
+variable "public_subnet" {
+  description = "Sets the public subnet that the ecs hosts are using"
+}
+
+# ECS Cluster Variables
+
+variable "ami_id" {
+  description = "Sets the ecs ami id"
+  default = "ami-0fb71e703258ab7eb"
+}
+
+variable "asg_desired" {
+  description = "Sets asg desired count"
+  default = "1"
+}
+
+variable "asg_force_delete" {
+  description = "Sets whether the ASG is deleted without waiting for instances to terminate"
+  default = true
+}
+
+variable "asg_max" {
+  description = "Sets asg max count"
+  default = "1"
+}
+
+variable "asg_min" {
+  description = "Sets asg min count"
+  default = "1"
+}
+
+variable "assign_public_ip" {
+  description = "Sets whether the ecs cluster has a public ip address"
+  default = true
+}
+
+variable "cidr" {
+  description = "Sets the cidr block of the VPC"
+  default = "172.31.0.0/16"
+}
+
+variable "flask_port" {
+  description = "Sets the port that the flask app will run on"
+  default = 5000
+}
+
+variable "instance_type" {
+  description = "Sets the instance type of the ECS cluster hosts"
+  default = "t2.micro"
+}
+
+variable "propagate_at_launch" {
+  description = "Enables propagation of the tag to Amazon EC2 instances launched via this ASG"
+  default = true
+}
+
+variable "ssh_port" {
+  description = "Sets the port that is used to ssh onto the ecs host"
+  default = 22
+}
+
+variable "volume_size" {
+  description = "Sets the ebs volume size"
+  default = 30
+}
+
+variable "volume_type" {
+  description = "Sets the ebs volume type"
+  default = "gp2"
 }
