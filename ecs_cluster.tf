@@ -1,4 +1,4 @@
-module "ecs" {
+module "ecs_cluster" {
   source                = "tf_aws_ecs_cluster"
   ami_id                = "${var.ami_id}"
   asg_desired           = "${var.asg_desired}"

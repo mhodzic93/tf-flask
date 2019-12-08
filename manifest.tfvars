@@ -1,3 +1,8 @@
 environment_type="development"
 region="us-west-2"
 stack_name="flask-dev"
+key_name="mhodzic-mac"
+vpc_id="vpc-fb976983"
+public_subnet="subnet-e5d2999c"
+account_id="034480765471"
+conduit_secret="secret"

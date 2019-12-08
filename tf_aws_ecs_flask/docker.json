@@ -1,0 +1,30 @@
+[
+   {
+      "name":"${DOCKER_NAME}",
+      "image":"${ECR_ACCOUNT}.dkr.ecr.${ECR_REGION}.amazonaws.com/${DOCKER_NAME}:${DOCKER_VERSION}",
+      "hostname":"${DOCKER_NAME}",
+      "memory":${DOCKER_MEMORY},
+      "cpu":${DOCKER_CPU},
+      "environment":[
+         {
+            "name":"CONDUIT_SECRET",
+            "value":"${CONDUIT_SECRET}"
+         },
+         {
+            "name":"FLASK_APP",
+            "value":"${FLASK_APP}"
+         },
+         {
+            "name":"FLASK_DEBUG",
+            "value":"${FLASK_DEBUG}"
+         }
+      ],
+      "portMappings":[
+         {
+            "hostPort":${HOST_PORT},
+            "containerPort":${CONTAINER_PORT},
+            "protocol":"tcp"
+         }
+      ]
+   }
+]

@@ -3,6 +3,7 @@
 variable "account_id" {
   description = "Sets the aws account id the infrastructure is deployed in"
 }
+
 variable "environment_type" {
   description = "Sets the environment being deployed"
 }
@@ -99,4 +100,51 @@ variable "volume_type" {
 variable "ecr_repos" {
   description = "List of ecr repos to build"
   default     = "flask,nginx"
+}
+
+# Flask variables
+variable "conduit_secret" {
+  description = "Sets the flask app secret key"
+}
+
+variable "flask_app" {
+  description = "Sets the path to the autoapp.py within the container"
+  default     = "/app/autoapp.py"
+}
+
+variable "flask_debug" {
+  description = "Sets whether the flask app is in debug mode, 1 is yes, 0 is no"
+  default     = "1"
+}
+
+# ECS service variables
+
+variable "docker_memory" {
+  description = "Sets the amount of RAM allocated to the ecs services"
+  type        = "map"
+
+  default = {
+    flask = 128
+    nginx = 128
+  }
+}
+
+variable "docker_cpu" {
+  description = "Sets the amount of CPU allocated to the ecs services"
+  type        = "map"
+
+  default = {
+    flask = 128
+    nginx = 128
+  }
+}
+
+variable "docker_version" {
+  description = "Sets the version of the image that is being deployed"
+  default     = "latest"
+}
+
+variable "desired_count" {
+  description = "Sets the desired number of ecs services to run"
+  default     = 1
 }
