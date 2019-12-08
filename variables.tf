@@ -27,65 +27,72 @@ variable "public_subnet" {
 
 variable "ami_id" {
   description = "Sets the ecs ami id"
-  default = "ami-0fb71e703258ab7eb"
+  default     = "ami-0fb71e703258ab7eb"
 }
 
 variable "asg_desired" {
   description = "Sets asg desired count"
-  default = "1"
+  default     = "1"
 }
 
 variable "asg_force_delete" {
   description = "Sets whether the ASG is deleted without waiting for instances to terminate"
-  default = true
+  default     = true
 }
 
 variable "asg_max" {
   description = "Sets asg max count"
-  default = "1"
+  default     = "1"
 }
 
 variable "asg_min" {
   description = "Sets asg min count"
-  default = "1"
+  default     = "1"
 }
 
 variable "assign_public_ip" {
   description = "Sets whether the ecs cluster has a public ip address"
-  default = true
+  default     = true
 }
 
 variable "cidr" {
   description = "Sets the cidr block of the VPC"
-  default = "172.31.0.0/16"
+  default     = "172.31.0.0/16"
 }
 
 variable "flask_port" {
   description = "Sets the port that the flask app will run on"
-  default = 5000
+  default     = 5000
 }
 
 variable "instance_type" {
   description = "Sets the instance type of the ECS cluster hosts"
-  default = "t2.micro"
+  default     = "t2.micro"
 }
 
 variable "propagate_at_launch" {
   description = "Enables propagation of the tag to Amazon EC2 instances launched via this ASG"
-  default = true
+  default     = true
 }
 
 variable "ssh_port" {
   description = "Sets the port that is used to ssh onto the ecs host"
-  default = 22
+  default     = 22
 }
 
 variable "volume_size" {
   description = "Sets the ebs volume size"
-  default = 30
+  default     = 30
 }
 
 variable "volume_type" {
   description = "Sets the ebs volume type"
-  default = "gp2"
+  default     = "gp2"
+}
+
+# ECR Variables
+
+variable "ecr_repos" {
+  description = "List of ecr repos to build"
+  default     = "flask,nginx"
 }
