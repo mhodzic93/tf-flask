@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM python:3.6.0
 
 EXPOSE 5000
 

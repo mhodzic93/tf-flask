@@ -14,4 +14,5 @@ module "ecs_flask" {
   host_port       = "${var.flask_port}"
   desired_count   = "${var.desired_count}"
   stack_name      = "${var.stack_name}"
+  network_mode    = "${var.network_mode}"
 }

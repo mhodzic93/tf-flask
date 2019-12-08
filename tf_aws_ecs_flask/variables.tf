@@ -12,3 +12,4 @@ variable "ecr_region" {}
 variable "flask_app" {}
 variable "flask_debug" {}
 variable "host_port" {}
+variable "network_mode" {}

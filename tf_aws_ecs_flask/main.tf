@@ -9,4 +9,5 @@ resource "aws_ecs_task_definition" "flask-td" {
   family                = "${var.stack_name}-${var.docker_name}"
   container_definitions = "${data.template_file.ecs_task.rendered}"
   task_role_arn         = "${aws_iam_role.flask.arn}"
+  network_mode          = "${var.network_mode}"
 }

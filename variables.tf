@@ -148,3 +148,8 @@ variable "desired_count" {
   description = "Sets the desired number of ecs services to run"
   default     = 1
 }
+
+variable "network_mode" {
+  description = "Sets the network mode of the ecs service"
+  default     = "host"
+}
