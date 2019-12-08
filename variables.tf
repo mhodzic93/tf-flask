@@ -1,4 +1,8 @@
 # General Variables
+
+variable "account_id" {
+  description = "Sets the aws account id the infrastructure is deployed in"
+}
 variable "environment_type" {
   description = "Sets the environment being deployed"
 }
