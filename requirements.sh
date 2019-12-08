@@ -8,3 +8,4 @@ tfenv install 0.11.14
 chmod +x plan.sh
 chmod +x deploy.sh
 chmod +x destroy.sh
+chmod +x ./scripts/ecr_login.sh
