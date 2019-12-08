@@ -22,6 +22,17 @@ chmod +x requirements.sh
 
 Start Docker by navigating to Applications and selecting the `Docker` application.
 
+Run the ecr login script to authenticate with ecr:
+```
+./scripts/ecr_login.sh <aws_profile>
+```
+
+# Building Docker images
+##### Flask
+To build the flask docker image, run the following commands:
+```
+./docker_images/flask/flask.sh
+```
 # Running Terraform
 Replace `<path_to_variables_file>` with the path to the manifest.tfvars file.
 
