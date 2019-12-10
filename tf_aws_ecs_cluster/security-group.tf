@@ -18,15 +18,22 @@ resource "aws_security_group" "ecs" {
   }
 
   ingress {
-    from_port       = "${var.ssh_port}"
-    to_port         = "${var.ssh_port}"
-    protocol        = "tcp"
+    from_port   = "${var.ssh_port}"
+    to_port     = "${var.ssh_port}"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
     from_port   = "${var.flask_port}"
     to_port     = "${var.flask_port}"
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = "${var.nginx_port}"
+    to_port     = "${var.nginx_port}"
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }

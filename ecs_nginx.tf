@@ -1,0 +1,15 @@
+module "ecs_nginx" {
+  source          = "tf_aws_ecs_nginx"
+  container_port  = "${var.nginx_port}"
+  docker_cpu      = "${lookup(var.docker_cpu, "nginx")}"
+  docker_memory   = "${lookup(var.docker_memory, "nginx")}"
+  docker_name     = "nginx"
+  docker_version  = "${var.docker_version}"
+  ecr_account     = "${var.account_id}"
+  ecr_region      = "${var.region}"
+  ecs_cluster_id  = "${module.ecs_cluster.ecs_cluster_id}"
+  host_port       = "${var.nginx_port}"
+  desired_count   = "${var.desired_count}"
+  stack_name      = "${var.stack_name}"
+  network_mode    = "${var.network_mode}"
+}

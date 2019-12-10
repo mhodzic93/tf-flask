@@ -70,6 +70,11 @@ variable "flask_port" {
   default     = 5000
 }
 
+variable "nginx_port" {
+  description = "Sets the port that nginx will run on"
+  default     = 80
+}
+
 variable "instance_type" {
   description = "Sets the instance type of the ECS cluster hosts"
   default     = "t2.micro"

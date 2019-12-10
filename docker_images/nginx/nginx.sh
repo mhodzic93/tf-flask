@@ -8,5 +8,5 @@ set +a
 
 cd docker_images/nginx
 docker build -t ${docker_name} .
-docker tag flask:latest ${account_id}.dkr.ecr.${region}.amazonaws.com/${docker_name}:latest
+docker tag ${docker_name}:latest ${account_id}.dkr.ecr.${region}.amazonaws.com/${docker_name}:latest
 docker push ${account_id}.dkr.ecr.${region}.amazonaws.com/${docker_name}:latest

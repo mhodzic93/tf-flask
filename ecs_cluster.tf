@@ -18,4 +18,5 @@ module "ecs_cluster" {
   volume_size           = "${var.volume_size}"
   volume_type           = "${var.volume_type}"
   vpc_id                = "${var.vpc_id}"
+  nginx_port            = "${var.nginx_port}"
 }
