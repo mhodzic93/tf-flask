@@ -8,6 +8,5 @@ variable "docker_memory" {}
 variable "docker_version" {}
 variable "ecr_account" {}
 variable "ecr_region" {}
-variable "flask_app" {}
 variable "host_port" {}
 variable "network_mode" {}

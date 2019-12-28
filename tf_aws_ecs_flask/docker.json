@@ -7,16 +7,8 @@
       "cpu":${DOCKER_CPU},
       "environment":[
          {
-            "name":"CONDUIT_SECRET",
-            "value":"${CONDUIT_SECRET}"
-         },
-         {
             "name":"FLASK_APP",
             "value":"${FLASK_APP}"
-         },
-         {
-            "name":"FLASK_DEBUG",
-            "value":"${FLASK_DEBUG}"
          }
       ],
       "portMappings":[

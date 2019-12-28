@@ -2,7 +2,6 @@ data "template_file" "ecs_task" {
   template = "${file("${path.module}/docker.json")}"
 
   vars = {
-    CONDUIT_SECRET = "${var.conduit_secret}"
     CONTAINER_PORT = "${var.container_port}"
     DOCKER_CPU     = "${var.docker_cpu}"
     DOCKER_MEMORY  = "${var.docker_memory}"
@@ -12,7 +11,6 @@ data "template_file" "ecs_task" {
     ECR_ACCOUNT    = "${var.ecr_account}"
     ECR_REGION     = "${var.ecr_region}"
     FLASK_APP      = "${var.flask_app}"
-    FLASK_DEBUG    = "${var.flask_debug}"
     HOST_PORT      = "${var.host_port}"
   }
 }

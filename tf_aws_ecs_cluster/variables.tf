@@ -17,3 +17,5 @@ variable "volume_size" {}
 variable "volume_type" {}
 variable "vpc_id" {}
 variable "nginx_port" {}
+variable "node_port" {}
+variable "https_port" {}

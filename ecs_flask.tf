@@ -1,6 +1,5 @@
 module "ecs_flask" {
   source          = "tf_aws_ecs_flask"
-  conduit_secret  = "${var.conduit_secret}"
   container_port  = "${var.flask_port}"
   docker_cpu      = "${lookup(var.docker_cpu, "flask")}"
   docker_memory   = "${lookup(var.docker_memory, "flask")}"
@@ -10,7 +9,6 @@ module "ecs_flask" {
   ecr_region      = "${var.region}"
   ecs_cluster_id  = "${module.ecs_cluster.ecs_cluster_id}"
   flask_app       = "${var.flask_app}"
-  flask_debug     = "${var.flask_debug}"
   host_port       = "${var.flask_port}"
   desired_count   = "${var.desired_count}"
   stack_name      = "${var.stack_name}"

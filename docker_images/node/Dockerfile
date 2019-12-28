@@ -1,10 +1,12 @@
-FROM python:3.7.0
-EXPOSE 5000
+FROM node:jessie
+EXPOSE 3000
 RUN apt-get update -y
 
-COPY ./flask_api /app
-WORKDIR /app
-RUN pip install -r requirements.txt
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY ./express-calculator /usr/src/app
+RUN npm install
 
 COPY ./docker_entrypoint.sh /tmp/entrypoint.sh
 RUN chmod +x /tmp/entrypoint.sh

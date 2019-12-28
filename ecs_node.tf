@@ -1,0 +1,15 @@
+module "ecs_node" {
+  source          = "tf_aws_ecs_node"
+  container_port  = "${var.node_port}"
+  docker_cpu      = "${lookup(var.docker_cpu, "node")}"
+  docker_memory   = "${lookup(var.docker_memory, "node")}"
+  docker_name     = "node"
+  docker_version  = "${var.docker_version}"
+  ecr_account     = "${var.account_id}"
+  ecr_region      = "${var.region}"
+  ecs_cluster_id  = "${module.ecs_cluster.ecs_cluster_id}"
+  host_port       = "${var.node_port}"
+  desired_count   = "${var.desired_count}"
+  stack_name      = "${var.stack_name}"
+  network_mode    = "${var.network_mode}"
+}

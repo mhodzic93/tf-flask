@@ -10,3 +10,4 @@ variable "ecr_account" {}
 variable "ecr_region" {}
 variable "host_port" {}
 variable "network_mode" {}
+variable "https_port" {}

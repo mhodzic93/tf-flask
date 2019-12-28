@@ -12,4 +12,5 @@ module "ecs_nginx" {
   desired_count   = "${var.desired_count}"
   stack_name      = "${var.stack_name}"
   network_mode    = "${var.network_mode}"
+  https_port      = "${var.https_port}"
 }

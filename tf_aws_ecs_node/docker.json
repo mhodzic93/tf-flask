@@ -5,21 +5,10 @@
       "hostname":"${DOCKER_NAME}",
       "memory":${DOCKER_MEMORY},
       "cpu":${DOCKER_CPU},
-      "environment":[
-            {
-            "name":"STACK_NAME",
-            "value":"${STACK_NAME}"
-         }
-      ],
       "portMappings":[
          {
             "hostPort":${HOST_PORT},
             "containerPort":${CONTAINER_PORT},
-            "protocol":"tcp"
-         },
-         {
-            "hostPort":${HTTPS_PORT},
-            "containerPort":,${HTTPS_PORT},
             "protocol":"tcp"
          }
       ]

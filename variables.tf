@@ -75,6 +75,16 @@ variable "nginx_port" {
   default     = 80
 }
 
+variable "node_port" {
+  description = "Sets the port that the flask app will run on"
+  default     = 3000
+}
+
+variable "https_port" {
+  description = "Sets the https port"
+  default     = 443
+}
+
 variable "instance_type" {
   description = "Sets the instance type of the ECS cluster hosts"
   default     = "t2.micro"
@@ -104,22 +114,13 @@ variable "volume_type" {
 
 variable "ecr_repos" {
   description = "List of ecr repos to build"
-  default     = "flask,nginx"
+  default     = "flask,nginx,node"
 }
 
 # Flask variables
-variable "conduit_secret" {
-  description = "Sets the flask app secret key"
-}
-
 variable "flask_app" {
   description = "Sets the path to the autoapp.py within the container"
-  default     = "/app/autoapp.py"
-}
-
-variable "flask_debug" {
-  description = "Sets whether the flask app is in debug mode, 1 is yes, 0 is no"
-  default     = "1"
+  default     = "/app/app.py"
 }
 
 # ECS service variables
@@ -131,6 +132,7 @@ variable "docker_memory" {
   default = {
     flask = 128
     nginx = 128
+    node  = 128
   }
 }
 
@@ -141,6 +143,7 @@ variable "docker_cpu" {
   default = {
     flask = 128
     nginx = 128
+    node  = 128
   }
 }
 

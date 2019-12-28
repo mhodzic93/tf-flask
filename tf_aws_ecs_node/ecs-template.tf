@@ -11,7 +11,5 @@ data "template_file" "ecs_task" {
     ECR_ACCOUNT    = "${var.ecr_account}"
     ECR_REGION     = "${var.ecr_region}"
     HOST_PORT      = "${var.host_port}"
-    STACK_NAME     = "${var.stack_name}"
-    HTTPS_PORT     = "${var.https_port}"
   }
 }
