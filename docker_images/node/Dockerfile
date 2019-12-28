@@ -1,4 +1,4 @@
-FROM node:jessie
+FROM node:8.17.0-jessie-slim
 EXPOSE 3000
 RUN apt-get update -y
 

@@ -42,9 +42,7 @@ chmod +x requirements.sh
 ./requirements.sh
 ```
 
-9. Start Docker by navigating to Applications and selecting the `Docker` application.
-
-10. Run the ecr login script to authenticate with ecr:
+9. Run the ecr login script to authenticate with ecr:
 ```
 ./scripts/ecr_login.sh <aws_profile>
 ```
