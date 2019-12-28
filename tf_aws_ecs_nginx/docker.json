@@ -19,7 +19,7 @@
          },
          {
             "hostPort":${HTTPS_PORT},
-            "containerPort":,${HTTPS_PORT},
+            "containerPort":${HTTPS_PORT},
             "protocol":"tcp"
          }
       ]
