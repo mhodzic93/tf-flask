@@ -21,7 +21,7 @@ parameters using the keys saved from step 2:
 5. Import a key pair to the EC2 service in the region you will be deploying in or create
 a key pair, if you don't already have an ssh key.
 
-6. Updated the following variables in the manifest.tfvars file:
+6. Update the following variables in the manifest.tfvars file:
 ```
 region - set this to the region you are deploying in
 stack_name - set this to the stack name of your choosing
@@ -110,3 +110,12 @@ Once you have no further need for the infrastructure, run the Terraform destroy 
 ```
 ./destroy.sh <path_to_variables_file> <aws_profile>
 ```
+
+# Improvements
+1. Build own VPC
+2. Make infrastructure highly available by including a load balancer, running multiple
+services in multiple AZ's.
+3. Create single script to run all commands.
+4. Tag docker images with a unique ID.
+5. Use ansible to generate SSL certs, build ngingx config files.
+6. Store Terraform state in S3 bucket.
