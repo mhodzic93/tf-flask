@@ -14,7 +14,7 @@ fi
 aws_profile="$2"
 if [ -z "${aws_profile}" ]; then
     echo "Please specify an aws profile in argument 2 for this script"
-    exit
+    exit 1
 fi
 
 export AWS_ACCESS_KEY_ID=$(aws configure get ${aws_profile}.aws_access_key_id)
@@ -34,10 +34,12 @@ else
   exit 1
 fi
 
+git clone https://github.com/atahualpapena/flask_api.git docker_images/flask/flask_api
+git clone https://github.com/mkhira2/express-calculator.git docker_images/node/express-calculator
+
 for docker_name in nginx flask node
 do
-  cd docker_images/${docker_name}
-  docker build -t ${docker_name} .
+  docker build -t ${docker_name} docker_images/${docker_name}
   docker tag ${docker_name}:latest ${account_id}.dkr.ecr.${region}.amazonaws.com/${docker_name}:latest
   docker push ${account_id}.dkr.ecr.${region}.amazonaws.com/${docker_name}:latest
 done
