@@ -26,5 +26,4 @@ open --background -a Docker
 chmod +x plan.sh
 chmod +x deploy.sh
 chmod +x destroy.sh
-chmod +x ./scripts/ecr_login.sh
-chmod +x ./docker_images/flask/flask.sh
+chmod +x ./scripts/docker_build.sh

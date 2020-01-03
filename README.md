@@ -1,5 +1,5 @@
 # tf-flask
-Builds and deploys a flask app on AWS using Terraform 
+Builds and deploys a flask and node app on AWS using Terraform.
 
 # Requirements
 1. Create an AWS account.
@@ -42,11 +42,6 @@ chmod +x requirements.sh
 ./requirements.sh
 ```
 
-9. Run the ecr login script to authenticate with ecr:
-```
-./scripts/ecr_login.sh <aws_profile>
-```
-
 # Running Terraform
 Replace `<path_to_variables_file>` with the path to the manifest.tfvars file.
 
@@ -63,22 +58,9 @@ Once you have ran the Terraform plan script, run the Terraform deploy script to 
 ```
 
 # Building Docker images
-##### Nginx
-To build the nginx docker image, run the following commands:
+To build the docker images, run the following command:
 ```
-./docker_images/nginx/nginx.sh
-```
-
-##### Flask
-To build the flask docker image, run the following commands:
-```
-./docker_images/flask/flask.sh
-```
-
-##### Node
-To build the node docker image, run the following commands:
-```
-./docker_images/node/node.sh
+./scripts/docker_build.sh <path_to_variables_file> <aws_profile>
 ```
 
 # Viewing the solution
@@ -118,4 +100,3 @@ services in multiple AZ's.
 3. Create single script to run all commands.
 4. Tag docker images with a unique ID.
 5. Use ansible to generate SSL certs, build ngingx config files.
-6. Store Terraform state in S3 bucket.
