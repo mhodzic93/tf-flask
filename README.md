@@ -4,7 +4,7 @@ Builds and deploys a flask and node app on AWS using Terraform.
 # Requirements
 1. Create an AWS account.
 
-2. Create an IAM user, assign the user `Programmatic access`, attach the `PowerUserAccess` IAM policy to the user, and 
+2. Create an IAM user, assign the user `Programmatic access`, attach the `AdministratorAccess` IAM policy to the user, and 
 save the access key ID and secret access key ID.
 
 3. Install the aws cli by running the following command:
