@@ -4,6 +4,7 @@
 xcode-select --install
 brew install gcc
 brew install tfenv
+brew install jq
 tfenv install 0.11.14
 
 # Install git

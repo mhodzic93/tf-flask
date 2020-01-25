@@ -3,6 +3,7 @@ data "template_file" "userdata" {
 
   vars = {
     stack_name = "${var.stack_name}"
+    ssl_bucket = "${var.ssl_bucket}"
   }
 }
 

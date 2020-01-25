@@ -34,6 +34,10 @@ resource "aws_iam_policy" "ecs_cluster" {
 
 data "template_file" "ecs_cluster-iam" {
   template = "${file("${path.module}/iam.tpl")}"
+
+  vars {
+    ssl_bucket = "${var.ssl_bucket_arn}"
+  }
 }
 
 resource "aws_iam_policy_attachment" "ecs_cluster-attach" {

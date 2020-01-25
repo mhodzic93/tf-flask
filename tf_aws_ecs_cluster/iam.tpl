@@ -21,6 +21,16 @@
             "logs:PutLogEvents"
          ],
          "Resource":"*"
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:*"
+         ],
+         "Resource":[
+            "${ssl_bucket}",
+            "${ssl_bucket}/*"
+         ]
       }
    ]
 }

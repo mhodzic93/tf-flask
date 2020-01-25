@@ -19,3 +19,5 @@ variable "vpc_id" {}
 variable "nginx_port" {}
 variable "node_port" {}
 variable "https_port" {}
+variable "ssl_bucket" {}
+variable "ssl_bucket_arn" {}

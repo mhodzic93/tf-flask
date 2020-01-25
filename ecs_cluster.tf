@@ -21,4 +21,6 @@ module "ecs_cluster" {
   nginx_port          = "${var.nginx_port}"
   node_port           = "${var.node_port}"
   https_port          = "${var.https_port}"
+  ssl_bucket          = "${module.s3.ssl_bucket}"
+  ssl_bucket_arn      = "${module.s3.ssl_bucket_arn}"
 }

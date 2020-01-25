@@ -161,3 +161,9 @@ variable "network_mode" {
   description = "Sets the network mode of the ecs service"
   default     = "host"
 }
+
+# S3 Variables
+variable "force_destroy" {
+  description = "Sets whether S3 buckets will be forced destroyed if they contain objects"
+  default     = true
+}

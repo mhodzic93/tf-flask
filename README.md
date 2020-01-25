@@ -54,7 +54,7 @@ Run the Terraform plan script to get a plan of the infrastructure that will be d
 
 Once you have ran the Terraform plan script, run the Terraform deploy script to deploy the infrastructure:
 ```
-./deploy.sh <aws_profile>
+./deploy.sh <path_to_variables_file> <aws_profile>
 ```
 
 # Building Docker images
